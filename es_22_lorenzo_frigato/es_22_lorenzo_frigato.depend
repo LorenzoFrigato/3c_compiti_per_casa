@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1478080920 source:z:\informatica_2016-2017\es_22_lorenzo_frigato\main.cpp
+	<iostream>
+	<string.h>
+	<stdlib.h>
+	<stdio.h>
+

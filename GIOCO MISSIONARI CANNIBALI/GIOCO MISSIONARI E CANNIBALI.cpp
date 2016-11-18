@@ -320,8 +320,7 @@ switch(azione){
             errore_logico = (missionariBarca==0 || lato_barca=='s');
             if(errore_logico) {
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
             }
             missionariBarca--;
@@ -332,8 +331,7 @@ switch(azione){
             errore_logico = (missionariBarca==0 || lato_barca=='d');
             if(errore_logico) {
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
             }
             missionariBarca--;
@@ -342,8 +340,7 @@ switch(azione){
 
             case('b'):
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
 
             }
@@ -356,8 +353,7 @@ switch(azione){
             errore_logico=(missionari_dx==0 || missionariBarca==2 || cannibaliBarca==2 ||( missionariBarca==1 & cannibaliBarca==1));
             if (errore_logico){
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+           system("PAUSE");
             break;
             }
             missionariBarca++;
@@ -368,8 +364,7 @@ switch(azione){
             errore_logico=(missionari_sx==0 || missionariBarca==2 || cannibaliBarca==2 || (missionariBarca==1 &cannibaliBarca==1));
             if (errore_logico){
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
             }
             missionariBarca++;
@@ -378,8 +373,7 @@ switch(azione){
 
             case('b'):
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
 
             }
@@ -398,8 +392,7 @@ switch(azione){
             errore_logico = (cannibaliBarca==0 || lato_barca=='s');
             if(errore_logico) {
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
             }
             cannibaliBarca--;
@@ -410,8 +403,7 @@ switch(azione){
             errore_logico = (cannibaliBarca==0 || lato_barca=='d');
             if(errore_logico) {
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
             }
             cannibaliBarca--;
@@ -420,8 +412,7 @@ switch(azione){
 
             case('b'):
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
 
             }
@@ -434,8 +425,7 @@ switch(azione){
             errore_logico=(cannibali_dx==0 || missionariBarca==2 || cannibaliBarca==2 || (missionariBarca==1 & cannibaliBarca==1));
             if (errore_logico){
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
             }
             cannibaliBarca++;
@@ -446,8 +436,7 @@ switch(azione){
             errore_logico=(cannibali_sx==0 || missionariBarca==2 || cannibaliBarca==2 || (missionariBarca==1 &cannibaliBarca==1));
             if (errore_logico){
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
             }
             cannibaliBarca++;
@@ -456,8 +445,7 @@ switch(azione){
 
             case('b'):
             cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            cout << "Premi un tasto qualunque per continuare ";
-            cin >> a;
+            system("PAUSE");
             break;
 
             }
@@ -472,8 +460,7 @@ errore_logico= false;
 errore_logico=(cannibaliBarca==0 && missionariBarca==0);
     if (errore_logico){
     cout <<"Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-    cout << "Premi un tasto qualunque per continuare ";
-    cin >> a;
+    system("PAUSE");
     }
     if(lato_barca=='d')
         lato_barca= 's';

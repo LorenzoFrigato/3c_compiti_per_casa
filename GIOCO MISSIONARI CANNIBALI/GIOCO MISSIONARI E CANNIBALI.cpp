@@ -120,6 +120,14 @@ void inizializza(void){
     lato_barca = 'd';
     postoSx ='_';
     postoDx ='_';
+    cout << "SCOPO DEL GIOCO: " << endl;
+    cout << "POrta i missionari e i cannibali sull'altra sponda del fiume" << endl;
+    cout << "Usa la barca, ma attento a non lasciare i       " << endl;
+    cout << "missionari in minoranza.... verranno mangiati!  " << endl;
+    cout << "Usa i tasti per selezionare e muovere i personaggi, "<< endl;
+    cout << "ma attento a fare scelte sensate!!"<< endl;
+    cout << "_______________________________________________________________________________" << endl;
+    system("PAUSE");
 }
 
 void messaggioFinale(void){

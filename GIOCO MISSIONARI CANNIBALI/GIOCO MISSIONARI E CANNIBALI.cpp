@@ -140,55 +140,43 @@ cout << "............................CANNIBALI E MISSIONARI.....................
 cout << "     ";
 int i;
 i=1;
-    while (i<= missionari_sx){
-        cout << "m";
-        cout << " ";
-        i++;
-    }
-i=1;
-    while (i<= cannibali_sx){
-        cout << "c";
-        cout << " ";
-        i++;
-    }
+    for (int i=1; i <= missionari_sx; i++)
+   {
+       cout << "m";
+       cout << " ";
+   }
+    for (int i=1; i <=cannibali_sx; i++)
+   {
+       cout << "c";
+       cout << " ";
+   }
 
 cout << "                              ";
 
- i=1;
-    while (i <=missionari_dx){
-        cout << "m";
-        cout << " ";
-        i++;
-    }
-i=1;
-    while (i <=cannibali_dx){
-        cout << "c";
-        cout << " ";
-        i++;
-    }
-   if (missionariBarca == 2){// errore nel codice da sistemare guarda perchè fa stampare robe sbagliate
+    for (int i=1; i <= missionari_dx; i++)
+   {
+       cout << "m";
+       cout << " ";
+   }
+   for (int i=1; i <=cannibali_dx; i++)
+   {
+       cout << "c";
+       cout << " ";
+   }
+   if (missionariBarca == 2)
         postoDx = 'm';
-        postoSx = 'm';
-        }
     else {
-        if (cannibaliBarca == 2){
-            // due cannibali occupano entrambi i posti in barca
+        if (cannibaliBarca == 2)   // due cannibali occupano entrambi i posti in barca
             postoSx = 'c';
-            postoDx = 'c';
-        }
         else {
             // i missionari cominciano ad occupare i posti in barca a partire da sinistra
-            if (missionariBarca = 1)
+            if (missionariBarca >= 1)
                 postoSx = 'm';
             // i cannibali cominciano ad occupare i posti in barca a partire da destra
-            if (cannibaliBarca = 1)
+            if (cannibaliBarca >= 1)
                 postoDx = 'c';
             }
         }
-        if(missionariBarca== 0 && cannibaliBarca==0){
-            postoDx='_';
-            postoSx='_';
-            }
    cout << endl;
    if (lato_barca == 's')
         cout << "---------------_(" << postoSx << "|" << postoDx << ")__________ ---------------" << endl;

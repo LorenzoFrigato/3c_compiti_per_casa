@@ -18,8 +18,7 @@ void muoviMissionario (void);
 void muoviCannibale(void);
 void muoviBarca(void);
 
-/****************************/
-
+/****************************
 
 /* VARIABILI GLOBALI E TIPI DI DATO */
 unsigned char a; // variabile che mi serve solo per visualizzare il messaggio d'errore logico
@@ -52,8 +51,8 @@ bool sconfitta;
 unsigned char personaggio;
 // scelta personaggio da muovere
 
-unsigned char azione;
-// scelta azione da fare
+unsigned char posizione;
+//  posizione iniziale paersonaggio
 
 unsigned char direzione;
 // direzione azione
@@ -120,7 +119,7 @@ void inizializza(){
     lato_barca = 'd';
     postoSx ='_';
     postoDx ='_';
-<<<<<<< HEAD
+    cout << endl;
     cout << "------------------ BENVENUTO AL GIOCO CANNIBALI E MISSIONARI ------------------ " << endl;
     cout << "" << endl;
     cout << "\t \t \t    SCOPO DEL GIOCO: " << endl;
@@ -129,19 +128,6 @@ void inizializza(){
     cout << "\t    Essi hanno solamente una barca da 2 posti ma sono in 6!!" << endl;
     cout << "\t      Usa i tasti per selezionare e muovere i personaggi, "<< endl;
     cout << " Attento, pero', a non lasciare i missionari in minoranza, verranno mangiati!!! " << endl;
-=======
-    cout << "...................BENVENUTO AL GIOCO CANNIBALI E MISSIONARI..................."<<endl;
-    cout << endl;
-    cout << "SCOPO DEL GIOCO: " << endl;
-    cout << "_______________________________________________________________________________" << endl;
-    cout << endl;
-    cout << "Porta i missionari e i cannibali sull'altra sponda del fiume" << endl;
-    cout << "Usa la barca, ma attento a non lasciare i       " << endl;
-    cout << "missionari in minoranza.... verranno mangiati!  " << endl;
-    cout << "Usa i tasti per selezionare e muovere i personaggi, "<< endl;
-    cout << "ma attento a fare scelte sensate!!"<< endl;
->>>>>>> origin/master
-    cout << "_______________________________________________________________________________" << endl;
     system("PAUSE");
 }
 
@@ -248,11 +234,11 @@ bool errore_inserimento = false;
         if (errore_inserimento){
         cout << "Inserisci valori corretti!!! (d;s;b)";
         }
-        cout << "Da doveve vuoi muovere il missionario?"<< endl;
+        cout << "Da dove vuoi muovere il missionario?"<< endl;
         cout << "Premi il tasto corrispondenete a seconda della sua posizione: "<< endl;
         cout << "d = sulla sponda destra" << endl << "s = sulla sponda sinistra" << endl<< "b = sulla barca"<< endl;
-        cin >> azione;
-        errore_inserimento=(azione!= 'd' && azione != 's' && azione!= 'b');
+        cin >> posizione;
+        errore_inserimento=(posizione!= 'd' && posizione != 's' && posizione!= 'b');
         }  while (errore_inserimento);
         system ("CLS");
         do {
@@ -271,11 +257,11 @@ bool errore_inserimento = false;
         if (errore_inserimento){
         cout << "Inserisci valori corretti!!! (d;s;b)";
         }
-        cout << "Da doveve vuoi muovere il cannibale?"<< endl;
+        cout << "Da dove vuoi muovere il cannibale?"<< endl;
         cout << "Premi il tasto corrispondenete a seconda della sua posizione: "<< endl;
         cout << "d = sulla sponda destra" << endl << "s = sulla sponda sinistra" << endl<< "b = sulla barca"<< endl;
-        cin >> azione;
-        errore_inserimento=(azione!= 'd' && azione != 's' && azione != 'b');
+        cin >> posizione;
+        errore_inserimento=(posizione!= 'd' && posizione != 's' && posizione != 'b');
         }while (errore_inserimento);
         system("CLS");
         do {
@@ -322,164 +308,125 @@ switch(personaggio){
 }
 }
 void muoviMissionario() {
-bool errore_logico;
-errore_logico= false;
-switch(azione){
-        case ('g'):
-
-            switch(direzione){
-
-            case('d'):
-            errore_logico = (missionariBarca==0 || lato_barca=='s');
-            if(errore_logico) {
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-            }
-            missionariBarca--;
-            missionari_dx++;
-            break;
-
-            case('s'):
-            errore_logico = (missionariBarca==0 || lato_barca=='d');
-            if(errore_logico) {
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-            }
-            missionariBarca--;
-            missionari_sx++;
-            break;
-
-            case('b'):
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-
-            }
-        break;
-
-        case ('s'):
-            switch(direzione){
-
-            case('d'):
-            errore_logico=(missionari_dx==0 || missionariBarca==2 || cannibaliBarca==2 ||( missionariBarca==1 & cannibaliBarca==1));
-            if (errore_logico){
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-           system("PAUSE");
-            break;
-            }
-            missionariBarca++;
-            missionari_dx--;
-            break;
-
-            case('s'):
-            errore_logico=(missionari_sx==0 || missionariBarca==2 || cannibaliBarca==2 || (missionariBarca==1 &cannibaliBarca==1));
-            if (errore_logico){
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-            }
-            missionariBarca++;
-            missionari_sx--;
-            break;
-
-            case('b'):
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-
-            }
-        break;
-}
+  if (posizione == 's' && direzione == 'b' && missionari_sx > 0
+        && lato_barca == 's'
+        && missionariBarca + cannibaliBarca < 2){
+        missionariBarca++;
+        missionari_sx--;
+    }
+    if (posizione == 'd' && direzione == 'b' && missionari_dx > 0
+        && lato_barca == 'd'
+        && missionariBarca + cannibaliBarca < 2){
+        missionariBarca++;
+        missionari_dx--;
+    }
+    if (posizione == 'b' && direzione == 's' && missionariBarca > 0
+        && lato_barca == 's'){
+        missionariBarca--;
+        missionari_sx++;
+    }
+    if (posizione == 'b' && direzione == 'd' && missionariBarca > 0
+        && lato_barca == 'd'){
+        missionariBarca--;
+        missionari_dx++;}
+        // MESSAGGI D'ERRORE
+    if (posizione == 'd' && direzione == 's' && missionari_dx >0 || posizione== 's' && direzione=='d'
+        && missionari_sx>0){
+       cout << "NON puoi portare un missionario da una sponda all'altra senza usare la barca!!"<< endl;
+        system ("pause");
+    }
+    if (posizione=='d' && direzione == 'b' && missionariBarca+ cannibaliBarca==2 ||
+        posizione=='s' && direzione == 'b' && missionariBarca+ cannibaliBarca==2){
+        cout << "La barca è piena!! Non ci sta più nessuno!!" << endl;
+        system ("pause");
+    }
+    if (posizione=='b' && direzione == 'd' && missionariBarca+ cannibaliBarca==0 ||
+        posizione=='b' && direzione == 's' && missionariBarca+ cannibaliBarca==0){
+        cout << "Non c'e' nessuno da spostare nella barca!!"<< endl;
+        system ("pause");
+    }
+    if (posizione=='b' && direzione == 'd' && lato_barca=='s' ||
+        posizione=='b' && direzione == 's' && lato_barca=='d'){
+        cout << "NON puoi spostare missionari sulla riva opposta!! Muovi la barca" << endl;
+        system ("pause");
+    }
+    if (posizione=='d' && direzione == 'b' && lato_barca=='s' && missionari_dx !=0 ||
+        posizione=='s' && direzione == 'b' && lato_barca=='d' && missionari_sx !=0){
+        cout << "NON puoi spostare missionari sulla barca situata sulla riva opposta!!" << endl;
+        cout << "Muovi la barca !!"<< endl;
+        system ("pause");
+    }
+    if (posizione=='d' && direzione == 'b' && missionari_dx==0 ||
+        posizione=='s' && direzione == 'b' && missionari_sx==0){
+        cout << "NON c'e' nessun missionario da spostare!!" << endl;
+        system ("pause");
+    }
 }
 void muoviCannibale (){
-bool errore_logico;
-errore_logico= false;
-switch(azione){
-        case ('g'):
+if (posizione == 's' && direzione == 'b' && cannibali_sx > 0
+        && lato_barca == 's'
+        && missionariBarca + cannibaliBarca < 2){
+        cannibaliBarca++;
+        cannibali_sx--;
+    }
+    if (posizione == 'd' && direzione == 'b' && cannibali_dx > 0
+        && lato_barca == 'd'
+        && missionariBarca + cannibaliBarca < 2){
+        cannibaliBarca++;
+        cannibali_dx--;
+    }
+    if (posizione == 'b' && direzione == 's' && cannibaliBarca > 0
+        && lato_barca == 's'){
+        cannibaliBarca--;
+        cannibali_sx++;
+    }
+    if (posizione == 'b' && direzione == 'd' && cannibaliBarca > 0
+        && lato_barca == 'd'){
+        cannibaliBarca--;
+        cannibali_dx++;
+    }
 
-            switch(direzione){
-
-            case('d'):
-            errore_logico = (cannibaliBarca==0 || lato_barca=='s');
-            if(errore_logico) {
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-            }
-            cannibaliBarca--;
-            cannibali_dx++;
-            break;
-
-            case('s'):
-            errore_logico = (cannibaliBarca==0 || lato_barca=='d');
-            if(errore_logico) {
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-            }
-            cannibaliBarca--;
-            cannibali_sx++;
-            break;
-
-            case('b'):
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-
-            }
-        break;
-
-        case ('s'):
-            switch(direzione){
-
-            case('d'):
-            errore_logico=(cannibali_dx==0 || missionariBarca==2 || cannibaliBarca==2 || (missionariBarca==1 & cannibaliBarca==1));
-            if (errore_logico){
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-            }
-            cannibaliBarca++;
-            cannibali_dx--;
-            break;
-
-            case('s'):
-            errore_logico=(cannibali_sx==0 || missionariBarca==2 || cannibaliBarca==2 || (missionariBarca==1 &cannibaliBarca==1));
-            if (errore_logico){
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-            }
-            cannibaliBarca++;
-            cannibali_sx--;
-            break;
-
-            case('b'):
-            cout << "Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-            system("PAUSE");
-            break;
-
-            }
-        break;
-
-
-        }
+    // MESSAGGI D'ERRORE
+    if (posizione == 'd' && direzione == 's' && cannibali_dx >0 || posizione== 's' && direzione=='d'
+        && cannibali_sx>0){
+       cout << "NON puoi portare un missionario da una sponda all'altra senza usare la barca!!"<< endl;
+        system ("PAUSE");
+    }
+    if (posizione=='d' && direzione == 'b' && missionariBarca+ cannibaliBarca==2 ||
+        posizione=='s' && direzione == 'b' && missionariBarca+ cannibaliBarca==2){
+        cout << "La barca è piena!! Non ci sta più nessuno!!" << endl;
+        system ("PAUSE");
+    }
+    if (posizione=='b' && direzione == 'd' && missionariBarca+ cannibaliBarca==0 ||
+        posizione=='b' && direzione == 's' && missionariBarca+ cannibaliBarca==0){
+        cout << "Non c'e' nessuno da spostare nella barca!!"<< endl;
+        system ("PAUSE");
+    }
+    if (posizione=='b' && direzione == 'd' && lato_barca=='s' ||
+        posizione=='b' && direzione == 's' && lato_barca=='d'){
+        cout << "NON puoi spostare cannibali sulla riva opposta!! Muovi la barca" << endl;
+        system ("PAUSE");
+    }
+    if (posizione=='d' && direzione == 'b' && lato_barca=='s' && cannibali_dx !=0||
+        posizione=='s' && direzione == 'b' && lato_barca=='d' && cannibali_sx !=0){
+        cout << "NON puoi spostare cannibali sulla barca situata sulla riva opposta!!" << endl;
+        cout << "Muovi la barca !!"<< endl;
+        system ("PAUSE");
+    }
+    if (posizione=='d' && direzione == 'b' && cannibali_dx==0 ||
+        posizione=='s' && direzione == 'b' && cannibali_sx==0){
+        cout << "NON c'e' nessun cannibale da spostare!!" << endl;
+        system ("PAUSE");
+    }
 }
 void muoviBarca (){
-bool errore_logico;
-errore_logico= false;
-errore_logico=(cannibaliBarca==0 && missionariBarca==0);
-    if (errore_logico){
-    cout <<"Errore logico! Controlla di aver dato una combinazione di scelte con un senso logico!!"<< endl;
-    system("PAUSE");
+ if ((missionariBarca+cannibaliBarca) == 0){
+        cout << "La barca non si puo' muovere se non contiene nessun personaggio." << endl;
+        system ("PAUSE");
+    }else{
+        if (lato_barca == 'd')
+            lato_barca = 's';
+        else // lato_barca == 's'
+            lato_barca = 'd';
     }
-    if(lato_barca=='d')
-        lato_barca= 's';
-
-    else
-        lato_barca='d';
-
-
 }

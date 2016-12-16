@@ -120,6 +120,7 @@ void inizializza(){
     lato_barca = 'd';
     postoSx ='_';
     postoDx ='_';
+<<<<<<< HEAD
     cout << "------------------ BENVENUTO AL GIOCO CANNIBALI E MISSIONARI ------------------ " << endl;
     cout << "" << endl;
     cout << "\t \t \t    SCOPO DEL GIOCO: " << endl;
@@ -128,6 +129,18 @@ void inizializza(){
     cout << "\t    Essi hanno solamente una barca da 2 posti ma sono in 6!!" << endl;
     cout << "\t      Usa i tasti per selezionare e muovere i personaggi, "<< endl;
     cout << " Attento, pero', a non lasciare i missionari in minoranza, verranno mangiati!!! " << endl;
+=======
+    cout << "...................BENVENUTO AL GIOCO CANNIBALI E MISSIONARI..................."<<endl;
+    cout << endl;
+    cout << "SCOPO DEL GIOCO: " << endl;
+    cout << "_______________________________________________________________________________" << endl;
+    cout << endl;
+    cout << "Porta i missionari e i cannibali sull'altra sponda del fiume" << endl;
+    cout << "Usa la barca, ma attento a non lasciare i       " << endl;
+    cout << "missionari in minoranza.... verranno mangiati!  " << endl;
+    cout << "Usa i tasti per selezionare e muovere i personaggi, "<< endl;
+    cout << "ma attento a fare scelte sensate!!"<< endl;
+>>>>>>> origin/master
     cout << "_______________________________________________________________________________" << endl;
     system("PAUSE");
 }

@@ -88,7 +88,7 @@ int main()
 
 
 
-void controllaVittoria(void){
+void controllaVittoria(){
 if (lato_barca=='d'){
 	if ((missionari_sx < cannibali_sx && missionari_sx > 0)||
           (missionari_dx + missionariBarca < cannibali_dx && missionari_dx > 0) )
@@ -105,7 +105,7 @@ if (lato_barca== 's'){
          gioco_terminato = true;
 }
 
-void inizializza(void){
+void inizializza(){
     //istruzioni che inizializzano le variabili del gioco
     system("CLS");
     sconfitta = false;
@@ -120,17 +120,19 @@ void inizializza(void){
     lato_barca = 'd';
     postoSx ='_';
     postoDx ='_';
-    cout << "SCOPO DEL GIOCO: " << endl;
-    cout << "POrta i missionari e i cannibali sull'altra sponda del fiume" << endl;
-    cout << "Usa la barca, ma attento a non lasciare i       " << endl;
-    cout << "missionari in minoranza.... verranno mangiati!  " << endl;
-    cout << "Usa i tasti per selezionare e muovere i personaggi, "<< endl;
-    cout << "ma attento a fare scelte sensate!!"<< endl;
+    cout << "------------------ BENVENUTO AL GIOCO CANNIBALI E MISSIONARI ------------------ " << endl;
+    cout << "" << endl;
+    cout << "\t \t \t    SCOPO DEL GIOCO: " << endl;
+    cout << endl;
+    cout << "\t      Aiuta i missionari ed i cannibali a guadare il fiume: " << endl;
+    cout << "\t    Essi hanno solamente una barca da 2 posti ma sono in 6!!" << endl;
+    cout << "\t      Usa i tasti per selezionare e muovere i personaggi, "<< endl;
+    cout << " Attento, pero', a non lasciare i missionari in minoranza, verranno mangiati!!! " << endl;
     cout << "_______________________________________________________________________________" << endl;
     system("PAUSE");
 }
 
-void messaggioFinale(void){
+void messaggioFinale(){
     system("CLS");
     if (gioco_terminato && sconfitta)
         cout << "Hai perso!" << endl;
@@ -139,7 +141,7 @@ void messaggioFinale(void){
 }
 
 
-void disegnaConfigurazione(void){
+void disegnaConfigurazione(){
  // DISEGNAZIONE INTERFACCIA INIZIALE
 
  system ("CLS");
@@ -194,7 +196,7 @@ cout << "                              ";
 }
 
 
-void interazioneUtente(void){
+void interazioneUtente(){
    /*
   Vengono  3 domande all'utente :
  - che tipo di elemento vuoi muovere?
@@ -231,21 +233,21 @@ bool errore_inserimento = false;
         case('m'):
         do{
         if (errore_inserimento){
-        cout << "Inserisci valori corretti!!! (g;s)";
+        cout << "Inserisci valori corretti!!! (d;s;b)";
         }
-        cout << "Che cosa deve fare il missionario?"<< endl;
-        cout << "Premi il tasto corrispondenete per l'azione che deve fare: "<< endl;
-        cout << "g = smontare dalla barca" << endl << "s = salire sulla barca" << endl;
+        cout << "Da doveve vuoi muovere il missionario?"<< endl;
+        cout << "Premi il tasto corrispondenete a seconda della sua posizione: "<< endl;
+        cout << "d = sulla sponda destra" << endl << "s = sulla sponda sinistra" << endl<< "b = sulla barca"<< endl;
         cin >> azione;
-        errore_inserimento=(azione!= 'g' && azione != 's');
+        errore_inserimento=(azione!= 'd' && azione != 's' && azione!= 'b');
         }  while (errore_inserimento);
         system ("CLS");
         do {
         if (errore_inserimento){
         cout << "Inserisci valori corretti!!! (d;s;b)";
         }
-        cout << "Da dove vuoi muovere il missionario?" << endl;
-        cout << "d = dalla sponda destra" << endl << "s = dalla sponda sinistra" << endl << "b = dalla barca"<< endl;
+        cout << "Dove vuoi far andare il missionario?" << endl;
+        cout << "d = sulla sponda destra" << endl << "s = sulla sponda sinistra" << endl << "b = sulla barca"<< endl;
         cin >> direzione;
         errore_inserimento=(direzione!='d'&& direzione!= 's' && direzione != 'b');
         } while (errore_inserimento);
@@ -254,38 +256,28 @@ bool errore_inserimento = false;
         case ('c'):
         do {
         if (errore_inserimento){
-        cout << "Inserisci valori corretti!!! (g;s)";
+        cout << "Inserisci valori corretti!!! (d;s;b)";
         }
-        cout << "Che cosa deve fare il cannibale?"<< endl;
-        cout << "Premi il tasto corrispondenete per l'azione che deve fare: "<< endl;
-        cout << "g = smontare dalla barca" << endl << "s = salire sulla barca" << endl;
+        cout << "Da doveve vuoi muovere il cannibale?"<< endl;
+        cout << "Premi il tasto corrispondenete a seconda della sua posizione: "<< endl;
+        cout << "d = sulla sponda destra" << endl << "s = sulla sponda sinistra" << endl<< "b = sulla barca"<< endl;
         cin >> azione;
-        errore_inserimento=(azione!= 'g' && azione != 's');
+        errore_inserimento=(azione!= 'd' && azione != 's' && azione != 'b');
         }while (errore_inserimento);
         system("CLS");
         do {
         if (errore_inserimento){
         cout << "Inserisci valori corretti!!! (d;s;b)";
         }
-        cout << "Da dove vuoi muovere il cannibale?"<< endl;
-        cout << "d = dalla sponda destra" << endl << "s = dalla sponda sinistra" << endl << "b = dalla barca"<< endl;
+        cout << "Dove vuoi far andare il cannibale?" << endl;
+        cout << "d = sulla sponda destra" << endl << "s = sulla sponda sinistra" << endl << "b = sulla barca"<< endl;
         cin >> direzione;
         errore_inserimento=(direzione!='d'&& direzione!= 's' && direzione != 'b');
         } while (errore_inserimento);
         break;
 
         case ('b'):
-        do {
-        if (errore_inserimento){
-        cout << "Inserisci valori corretti!!! (n)";
-        }
-        cout << "Che cosa deve fare la barca?"<< endl;
-        cout << "Premi il tasto corrispondenete per l'azione che deve fare: "<< endl;
-        cout << "n = fai partire la barca verso la riva opposta"<< endl;
-        cin >> azione;
-        errore_inserimento=(azione != 'n');
-        }while (errore_inserimento);
-        break;
+         break;
         }
 
     }
@@ -296,7 +288,7 @@ bool errore_inserimento = false;
 
 
 
-void eseguiAzione(void){
+void eseguiAzione(){
 
 switch(personaggio){
 
@@ -316,7 +308,7 @@ switch(personaggio){
 
 }
 }
-void muoviMissionario(void) {
+void muoviMissionario() {
 bool errore_logico;
 errore_logico= false;
 switch(azione){
@@ -388,7 +380,7 @@ switch(azione){
         break;
 }
 }
-void muoviCannibale (void){
+void muoviCannibale (){
 bool errore_logico;
 errore_logico= false;
 switch(azione){
@@ -462,7 +454,7 @@ switch(azione){
 
         }
 }
-void muoviBarca (void){
+void muoviBarca (){
 bool errore_logico;
 errore_logico= false;
 errore_logico=(cannibaliBarca==0 && missionariBarca==0);

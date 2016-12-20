@@ -120,7 +120,7 @@ void inizializza(){
     postoSx ='_';
     postoDx ='_';
     cout << endl;
-    cout << "------------------ BENVENUTO AL GIOCO CANNIBALI E MISSIONARI ------------------ " << endl;
+    cout << "___________________BENVENUTO AL GIOCO CANNIBALI E MISSIONARI___________________  " << endl;
     cout << "" << endl;
     cout << "\t \t \t    SCOPO DEL GIOCO: " << endl;
     cout << endl;
@@ -128,6 +128,7 @@ void inizializza(){
     cout << "\t    Essi hanno solamente una barca da 2 posti ma sono in 6!!" << endl;
     cout << "\t      Usa i tasti per selezionare e muovere i personaggi, "<< endl;
     cout << " Attento, pero', a non lasciare i missionari in minoranza, verranno mangiati!!! " << endl;
+    cout << "________________________________________________________________________________" << endl;
     system("PAUSE");
 }
 
@@ -337,7 +338,7 @@ void muoviMissionario() {
     }
     if (posizione=='d' && direzione == 'b' && missionariBarca+ cannibaliBarca==2 ||
         posizione=='s' && direzione == 'b' && missionariBarca+ cannibaliBarca==2){
-        cout << "La barca è piena!! Non ci sta più nessuno!!" << endl;
+        cout << "La barca e' piena!! Non ci sta piu' nessuno!!" << endl;
         system ("pause");
     }
     if (posizione=='b' && direzione == 'd' && missionariBarca+ cannibaliBarca==0 ||
@@ -394,7 +395,7 @@ if (posizione == 's' && direzione == 'b' && cannibali_sx > 0
     }
     if (posizione=='d' && direzione == 'b' && missionariBarca+ cannibaliBarca==2 ||
         posizione=='s' && direzione == 'b' && missionariBarca+ cannibaliBarca==2){
-        cout << "La barca è piena!! Non ci sta più nessuno!!" << endl;
+        cout << "La barca e' piena!! Non ci sta piu' nessuno!!" << endl;
         system ("PAUSE");
     }
     if (posizione=='b' && direzione == 'd' && missionariBarca+ cannibaliBarca==0 ||

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
 
 int main (){
@@ -15,9 +16,10 @@ for (i=2;i<100;i++){
 
 cout << "numeri primi <100" <<i;
 for (i=1;i<100;i++){// stampa ogni numero a cui non è stato trovato alcun divisore (i=1)
-    if(array[i]=1)
+    if(array[i]==1)
         cout<< i;
 }
+system ("PAUSE");
 }
 
 }

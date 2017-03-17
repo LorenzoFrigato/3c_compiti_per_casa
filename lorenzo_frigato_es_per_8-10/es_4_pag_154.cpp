@@ -29,9 +29,9 @@ void caricamento(int v [], int dim){
 }
 void prodotto(int v[],int dim){
     int p=1;
-    for (int i=0;i<dim;i++){
+    for (int i=0;i<dim;i+=2){
         p=p*v[i];
-        i++;
+
     }
     cout << "Il prodotto delle componenti pari e': " << p << endl;
 }

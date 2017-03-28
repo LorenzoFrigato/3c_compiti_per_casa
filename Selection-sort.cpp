@@ -22,10 +22,14 @@ int comodo;
             for (int j=i+1; j<dim; j++){
                     if (v[j] < v[minore]){
                             minore = j;
-                            comodo = v[minore];
-                            v[minore] = v[i];
-                            v[i] = comodo;
+
                             }
+                    if (j== dim-1){
+                        comodo = v[minore];
+                        v[minore] = v[i];
+                        v[i] = comodo;
+
+                    }
                 }
 }//end selection sort
 }

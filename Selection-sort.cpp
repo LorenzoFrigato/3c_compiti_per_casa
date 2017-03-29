@@ -24,10 +24,10 @@ void selection_sort(int v[], int dim)
             if (v[j] < v[minore]){
                 minore=j;
             }
-            if (j==dim-1){
-                comodo = v[minore];
-                v[minore]=v[i];
-                v[i]=comodo;}
         }
+
+    comodo = v[minore];
+    v[minore]=v[i];
+    v[i]=comodo;
     }
 }//end selection sort

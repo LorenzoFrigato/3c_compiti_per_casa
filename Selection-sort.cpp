@@ -19,15 +19,15 @@ void selection_sort(int v[], int dim)
 {
     int comodo;
     for(int i = 0; i < dim-1; i++){
-        int minore=i;
+        int minore=v[i];
         for (int j = i+1; j < dim; j++){
-            if (v[j] < v[minore]){
-                minore=j;
+            if (v[j] < minore){
+                minore=v[j];
             }
         }
 
-    comodo = v[minore];
-    v[minore]=v[i];
+    comodo = minore;
+    v[i]= minore;
     v[i]=comodo;
     }
 }//end selection sort

@@ -17,5 +17,6 @@ char indirizzo []= "Via bernardi 3/a";
 cout << indirizzo<< endl;
 string telefono = "pippo graziani";
 cout << telefono<< endl;
+cout << telefono[5];
 
 }

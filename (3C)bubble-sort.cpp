@@ -10,8 +10,6 @@ void scambio(int v[], int dim, int pos1, int pos2);
 int main(){
     int a[] = {-3,-1,0,7,4,5,7,8,10,1,9};
     int dim = 11;
-    selection_sort(a, dim);
-    stampa(a, dim);
     cout << endl;
     int b[] = {-3,-1,0,7,4,5,7,8,10,1,9};
     bubble_sort(b, dim);
@@ -28,19 +26,17 @@ void bubble_sort(int v[], int dim){
         sup = k;
         continua = false;
         for(i = 0; i < sup-1; i++){
+cout << i;
             if (v[i]>v[i+1]){
                 // scambio tra v[i] e v[i+1]
                 scambio(v, dim, i, i+1);
                 continua = true;
-               k=i;
+               k=i+1;
             }
-        for (int i=0; i<dim; i++){
-            cout << v[i]<< " ";
-            }
-        cout << endl;
+
 
         }//fine ciclo for
-    }//fine ciclo while
+ }//fine ciclo while
 }//fine funzione
 
 void selection_sort(int v[], int dim){
